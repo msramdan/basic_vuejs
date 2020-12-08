@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Vue</title>
+    <style>
+      body {
+        margin: 5%;
+        font-family: "Quicksand", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <!-- {{}} = interpolation / tempalte syntax -->
+        <h1>{{name}}</h1>
+        <p v-once>{{message}}</p>
+      </header>
+      <footer id="footer">
+        <p>Copyright 2020</p>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script>
+      const member = {
+        name: "Ramdan",
+        message: "Hello Nama Saya Ramdan",
+      };
+
+      const vm = new Vue({
+        //variable vm sebagai object vue
+        //el dan data di sebut property
+        el: "#app",
+        data: member,
+      });
+    </script>
+  </body>
+</html>
