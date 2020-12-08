@@ -17,6 +17,7 @@
         <!-- {{}} = interpolation / tempalte syntax -->
         <h1>{{name}}</h1>
         <p v-once>{{message}}</p>
+        <p>{{getname()}}</p>
       </header>
       <footer id="footer">
         <p>Copyright 2020</p>
@@ -34,6 +35,11 @@
         //el dan data di sebut property
         el: "#app",
         data: member,
+        methods: {
+          getname: function () {
+            return "Hello Nama saya adalah " + this.name;
+          },
+        },
       });
     </script>
   </body>
