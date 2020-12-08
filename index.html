@@ -37,7 +37,11 @@
         data: member,
         methods: {
           getname: function () {
-            return "Hello Nama saya adalah " + this.name;
+            return "Hello Nama saya adalah " + this.name; // this mengacu pada object vue bisa akses semua datanya
+          },
+          ubahNama: function (namaBaru) {
+            this.name = namaBaru;
+            return this.getname();
           },
         },
       });
