@@ -9,6 +9,9 @@
         margin: 5%;
         font-family: "Quicksand", sans-serif;
       }
+      .active {
+        background: salmon;
+      }
     </style>
   </head>
   <body>
@@ -23,7 +26,22 @@
         <h1>Angka {{angka}}</h1>
         <p>Angka di atas adalah bilangan {{ infoBilangan}}</p>
         <p v-html="link"></p>
-        <button v-on:click="handleClick()">Tambah</button>
+        <button
+          v-on:click="handleClick()"
+          @click="menu='tambah'"
+          v-bind:class="{active:menu ==='tambah'}"
+        >
+          Tambah
+        </button>
+        <button v-bind:class="{active:menu ==='home'}" @click="menu ='home'">
+          Home
+        </button>
+        <button v-bind:class="{active:menu ==='about'}" @click="menu ='about'">
+          About
+        </button>
+        <button v-bind:class="{active:menu ==='blog'}" @click="menu ='blog'">
+          Blog
+        </button>
       </header>
       <footer id="footer">
         <p>Copyright 2020</p>
@@ -40,6 +58,7 @@
         namaBelakang: "Ramdan",
         angka: 10,
         link: '<a href="">Kangramdan.com</a>',
+        menu: "home",
       };
 
       const vm = new Vue({
