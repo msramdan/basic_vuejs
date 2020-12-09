@@ -21,9 +21,9 @@
         <p>Nama Lengkap saya adalah : {{namaLengkap}}</p>
         <br />
         <h1>Angka {{angka}}</h1>
-        <p>
-          Angka di atas adalah bilangan {{angka%2 ===0 ? "Genap" : "Ganjil" }}
-        </p>
+        <p>Angka di atas adalah bilangan {{ infoBilangan}}</p>
+        <p v-html="link"></p>
+        <button v-on:click="handleClick()">Tambah</button>
       </header>
       <footer id="footer">
         <p>Copyright 2020</p>
@@ -39,6 +39,7 @@
         namaDepan: "muhammad",
         namaBelakang: "Ramdan",
         angka: 10,
+        link: '<a href="">Kangramdan.com</a>',
       };
 
       const vm = new Vue({
@@ -54,6 +55,9 @@
             this.name = namaBaru;
             return this.getname();
           },
+          handleClick() {
+            this.angka++;
+          },
         },
         computed: {
           hitungTotal() {
@@ -61,6 +65,9 @@
           },
           namaLengkap() {
             return this.namaDepan + " " + this.namaBelakang;
+          },
+          infoBilangan() {
+            return this.angka % 2 === 0 ? "Genap" : "Ganjil";
           },
         },
       });
