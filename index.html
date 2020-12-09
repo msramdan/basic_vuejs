@@ -19,6 +19,11 @@
         <p v-once>{{message}}</p>
         <p>{{getname()}}</p>
         <p>Nama Lengkap saya adalah : {{namaLengkap}}</p>
+        <br />
+        <h1>Angka {{angka}}</h1>
+        <p>
+          Angka di atas adalah bilangan {{angka%2 ===0 ? "Genap" : "Ganjil" }}
+        </p>
       </header>
       <footer id="footer">
         <p>Copyright 2020</p>
@@ -33,6 +38,7 @@
         qty: 2,
         namaDepan: "muhammad",
         namaBelakang: "Ramdan",
+        angka: 10,
       };
 
       const vm = new Vue({
